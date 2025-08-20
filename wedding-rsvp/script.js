@@ -168,7 +168,7 @@ const hadirRow = document.querySelector(".hadir-row");
 const hadirBersamaDiv = document.getElementById("hadirBersama").parentElement;
 
 // Your Google Apps Script Web App URL (replace with your actual deployed URL)
-const scriptURL = "https://script.google.com/macros/s/AKfycbxpWxB9GworNDBEmjY0L26RpD0VREfsRMWu-6n5v7xCwkFDKUP1QVQyK1zhXSQAFtiDpg/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbxx6icQGsY1_l4GdptCgy2wc-1-wF7JnJQFkTYz_7EPWOShBdefBZX8YL53gOl6T-T6/exec";
 
 // Open RSVP Popup
 document.getElementById("rsvpBtn").addEventListener("click", (e) => {
@@ -215,7 +215,7 @@ rsvpForm.addEventListener("submit", (e) => {
 
   const data = new FormData(rsvpForm);
 
-  fetch("https://script.google.com/macros/s/AKfycbxpWxB9GworNDBEmjY0L26RpD0VREfsRMWu-6n5v7xCwkFDKUP1QVQyK1zhXSQAFtiDpg/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbxx6icQGsY1_l4GdptCgy2wc-1-wF7JnJQFkTYz_7EPWOShBdefBZX8YL53gOl6T-T6/exec", {
     method: "POST",
     body: data,
   })
