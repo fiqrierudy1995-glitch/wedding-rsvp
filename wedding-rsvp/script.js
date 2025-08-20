@@ -213,23 +213,24 @@ batalBtn.addEventListener("click", () => {
 rsvpForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const formData = new FormData(rsvpForm);
+  const data = new FormData(rsvpForm);
 
-  fetch(scriptURL, { method: "POST", body: formData })
-    .then((response) => {
-      if (response.ok) {
-        alert("✅ Terima kasih atas RSVP anda!");
-        rsvpForm.reset();
-        rsvpForm.style.display = "none"; 
-        hadirRow.style.display = "flex"; 
-        hadirBersamaDiv.style.display = "block"; 
-        rsvpPopup.style.display = "none"; 
-      } else {
-        alert("⚠️ Maaf, berlaku masalah. Sila cuba lagi.");
-      }
-    })
-    .catch((error) => {
-      console.error("Error!", error);
-      alert("❌ Tidak berjaya hantar RSVP. Semak sambungan internet anda.");
-    });
+  fetch("https://script.google.com/macros/s/AKfycbxpWxB9GworNDBEmjY0L26RpD0VREfsRMWu-6n5v7xCwkFDKUP1QVQyK1zhXSQAFtiDpg/exec", {
+    method: "POST",
+    body: data,
+  })
+  .then(response => response.text())
+  .then(result => {
+    alert("Terima kasih atas RSVP anda!");
+    rsvpForm.reset();
+    rsvpForm.style.display = "none";
+    hadirRow.style.display = "flex";
+    hadirBersamaDiv.style.display = "block";
+    rsvpPopup.style.display = "none";
+    console.log("Form submitted successfully:", result);
+  })
+  .catch(error => {
+    alert("Ada masalah menghantar RSVP. Sila cuba lagi.");
+    console.error("Error:", error);
+  });
 });
