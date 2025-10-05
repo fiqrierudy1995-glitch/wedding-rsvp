@@ -1047,17 +1047,19 @@ h2#countdowntitle{
 
 /* Hadir button */
 #hadirBtn {
-  background-color: #e6f8ed;            /* light green */
-  color: #2e7d32;                       /* dark green text */
-  border: 1px solid #2e7d32;
+  background-color: rgba(255, 255, 255, 0.8);  /* semi-transparent white */
+  border: 1px solid #45556b;
+  color: #45556b;
+  
 }
 
 /* Tidak Hadir button */
 #tidakhadirBtn {
-  background-color: #fdecea;            /* light red */
-  color: #c62828;                       /* dark red text */
-  border: 1px solid #c62828;
+  background-color: rgba(255, 255, 255, 0.8);  /* semi-transparent white */
+  border: 1px solid #45556b;
+    color: #45556b;
 }
+
 
 /* Hover effects */
 .hadir-row button:hover {
