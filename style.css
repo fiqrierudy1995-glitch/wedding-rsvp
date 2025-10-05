@@ -198,8 +198,8 @@ background-position: top center;
 
 
 .aluan-text {
-  margin: 12px;  
-  font-size: 17px;       /* slightly larger for readability */
+  margin: 15px;  
+  font-size: 16px;       /* slightly larger for readability */
   font-style: normal;    
   text-align: center;
   color: #45556b;
@@ -242,7 +242,7 @@ background-position: top center;
 .date1-text,
 .tempat1-text,
 .hour1-text {
-  font-size: 17px;
+  font-size: 16px;
   font-style: normal;
   text-align: center;
   color: #45556b;
@@ -538,7 +538,7 @@ h2#countdowntitle{
   left: 0;  /* needed for auto margin */
   right: 0; /* needed for auto margin */
   height: 80px;
-  background-color: rgba(255, 254, 248, 0.95);
+  background-color: rgba(255, 254, 248, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -556,6 +556,8 @@ h2#countdowntitle{
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+    background-color: rgba(255, 254, 248, 0.5);
+
 }
 
 /* Buttons container */
