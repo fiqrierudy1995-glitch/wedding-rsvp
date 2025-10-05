@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+<<<<<<< HEAD
   width: 100%;
   display: flex;
   justify-content: center;  /* center horizontally */
@@ -21,6 +22,258 @@ body {
   transform-style: preserve-3d;
   transition: all 4s;
   z-index: 2000;
+=======
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f8f8f8;
+  overflow: hidden;
+}
+
+/* MOBILE FRAME */
+.mobile-frame {
+  width: 390px;
+  height: 844px;
+  position: relative;
+  border-radius: 0px;
+  box-shadow:black 5px;
+  overflow: hidden;
+  background-image: url('https://i.postimg.cc/dQGGm6kV/FIQRIE-RUDY.jpg'); /* stationary bg */
+  background-size: cover;
+  background-position: center;
+}
+
+/* SCROLLABLE CONTAINER */
+.scroll-container {
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden; /* 🔒 lock scroll initially */
+  display: block;
+  flex-direction: column;
+  padding-bottom: 300px; /* ⬅️ adds breathing space at the end */
+
+
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,0,0,0.2) transparent;
+}
+
+/* Chrome, Safari, Edge */
+.scroll-container::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scroll-container::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+/* PAGE 1 CONTENT */
+.content {
+  flex: 0 0 844px;   /* maintain full frame height */
+  display: flex;
+  justify-content: center;  /* horizontal center */
+  align-items: flex-start;  /* align image to top */
+  position: relative;
+  z-index: 1;
+}
+
+/* IMAGE INSIDE CONTENT */
+.content img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* PAGE 2 CONTENT */
+.page2 {
+  flex: 0 0 auto;
+  min-height: 100%;   
+  display: flex;
+  flex-direction: column;   /* 🔹 stack vertically */
+  justify-content: flex-start; 
+  align-items: center;      /* center horizontally */
+  padding-top: 20px;
+}
+
+.arabic-text {
+  padding-top: 25px;
+  margin: 0 0 10px 0;   /* spacing below */
+  font-size: 15px;      /* larger for Arabic greeting */
+  font-weight: bold;
+  text-align: center;
+  color: #5d322f;
+}
+
+.parents-group {
+  margin: 0 0 2px 0;    /* spacing below */
+  font-size: 20px;      /* slightly smaller than Arabic text */
+  font-weight: 600;
+  text-align: center;
+  color: #5d322f;  
+  line-height: 0.5;
+  font-family: 'Cinzel Decorative', serif;
+}
+
+.aluan-text {
+  margin: 12px;  
+  font-size: 13px;      /* normal paragraph size */
+  font-style: normal;   /* formal touch */
+  text-align: center;
+  color: #5d322f;
+  line-height: 1.2;     /* better readability */
+  max-width: 320px;     /* keeps text tidy inside mobile frame */
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Quicksand';
+  font-weight: 400;
+}
+
+.couple-text {
+  margin: 0 0 6px 0;    /* spacing below */
+  font-size: 20px;      /* slightly smaller than Arabic text */
+  font-weight: 600;
+  text-align: center;
+  color: #5d322f;
+  line-height: 0.5;
+  font-family: 'Cinzel Decorative', serif;
+}
+
+.date-text,
+.date1-text,
+.tempat-text,
+.tempat1-text,
+.hour-text,
+.hour1-text {
+  font-size: 13px;
+  font-style: normal;
+  text-align: center;
+  color: #5d322f;
+  line-height: 1.4;  /* slightly tighter */
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Quicksand';
+}
+
+.date-text { font-weight: 600; margin-bottom: 0; }
+.date1-text { font-weight: 400; margin-top: 0; margin-bottom: 4px; } /* small gap before next group */
+
+.tempat-text { font-weight: 600; margin-bottom: 0; }
+.tempat1-text { font-weight: 400; margin-top: 0; margin-bottom: 4px; }
+
+.hour-text { font-weight: 600; margin-bottom: 0; }
+.hour1-text { font-weight: 400; margin-top: 0; margin-bottom: 70px; }
+
+
+.box-text {
+  position: relative;
+  padding: 35px 90px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.6); /* inner solid color */
+  max-width: 380px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.box-text::before {
+  content: "";
+  position: absolute;
+  top: -12px;   /* thinner frame */
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
+  border-radius: 24px; /* 20px + ~4px for frame */
+  background: rgba(255, 255, 255, 0.4); /* transparent frame */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10); /* outer shadow */
+
+  z-index: -1;
+}
+
+.box-text h3{
+  margin: 40px;  
+  font-size: 14px;      /* normal paragraph size */
+  text-align: center;
+  color: #5d322f;
+  line-height: 1.2;     /* better readability */
+  max-width: 320px;     /* keeps text tidy inside mobile frame */
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  font-family: 'Quicksand';
+  font-weight: 600;
+}
+
+.box-text h4,
+.box-text p 
+{
+  margin: 12px;  
+  font-size: 13px;      /* normal paragraph size */
+  text-align: center;
+  color: #5d322f;
+  line-height: 1.2;     /* better readability */
+  max-width: 320px;     /* keeps text tidy inside mobile frame */
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Quicksand';
+}
+
+.box-text h4 { font-weight: 600; margin-bottom: 0; }
+.box-text p { font-weight: 400; margin-top: 0; margin-bottom: 20px; } /* small gap before next group */
+
+
+
+.majlis2-text,.majlis4-text,.majlis6-text,.majlis8-text{
+  margin: 12px;  
+  font-size: 13px;      /* normal paragraph size */
+  text-align: center;
+  color: #5d322f;
+  line-height: 1.2;     /* better readability */
+  max-width: 320px;     /* keeps text tidy inside mobile frame */
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Quicksand';
+  font-weight: 400;
+}
+
+#doa1-text {
+  padding-top: 60px;
+  margin: 0 0 10px 0;   /* spacing below */
+  font-size: 16px;      /* larger for Arabic greeting */
+  font-weight: bold;
+  text-align: center;
+  color: #5d322f;
+  font-family: 'Quicksand';
+  font-weight: 600;
+}
+#doaa2-text {
+  padding-top: 18px;
+  margin: 0 0 30px 0;   /* spacing below */
+  font-size: 12px;      /* larger for Arabic greeting */
+  text-align: center;
+  color: #5d322f;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+  font-family: 'Quicksand';
+  font-weight: 400;
+}
+
+/* CURTAINS */
+.curtain {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(6px);
+  transform-style: preserve-3d;
+  transition: all 4s;
+  z-index: 10;
+>>>>>>> 610bb25472239167b601d92f37e2b609c7fddd43
 }
 
 .left-curtain { left: 0; transform-origin: left; transform: rotateY(0deg); z-index: 10; }
@@ -56,19 +309,31 @@ body {
   animation-name: drift;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
+<<<<<<< HEAD
   z-index: 1;   /* 👈 Lower than curtain */
   pointer-events: none; /* snow won’t block clicks */
+=======
+  z-index: 50;
+>>>>>>> 610bb25472239167b601d92f37e2b609c7fddd43
 }
 
 /* Snowflake itself falls + twinkles */
 .snowflake {
   background-color: floralwhite;
   border-radius: 50%;
+<<<<<<< HEAD
+=======
+  pointer-events: none;
+>>>>>>> 610bb25472239167b601d92f37e2b609c7fddd43
   opacity: 0.9;
   animation-name: fall, twinkle;
   animation-timing-function: linear, ease-in-out;
   animation-iteration-count: infinite, infinite;
+<<<<<<< HEAD
   z-index: 1;   /* 👈 Keep low */
+=======
+  z-index: 50;
+>>>>>>> 610bb25472239167b601d92f37e2b609c7fddd43
 }
 
 /* Falling down */
@@ -92,6 +357,7 @@ body {
 /* prevent horizontal scroll */
 .mobile-frame, .scroll-container, .content, .page2 { overflow-x: hidden; }
 
+<<<<<<< HEAD
 /* MOBILE FRAME */
 .mobile-frame {
   width: 100%;
@@ -368,6 +634,535 @@ h2#countdowntitle{
 }
 
 #countdown-timer {
+=======
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  width: 390px;
+  height: 70px;
+  transform: translateX(-50%) translateY(20px);
+  background-color: rgba(255, 255, 255, 0.9);
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  justify-content: space-between;  /* three sections */
+  align-items: center;
+  padding: 10px 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: opacity 2s ease-in-out, transform 0.5s ease-in-out;
+  box-sizing: border-box;
+}
+
+.bottom-nav.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  background-color: rgb(244, 241, 235,0.2);
+}
+
+.bottom-nav .nav-section {
+  display: flex;
+  gap: 20px;   /* spacing between icons */
+  flex: 1;     /* left + right sections take equal width */
+}
+
+.bottom-nav a {
+  flex: 1; /* Ensure equal spacing between links */
+  text-align: center;
+  font-size: 13px;
+  text-decoration: none;
+  color: #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-nav i {
+  font-size: 20px;
+  margin-bottom: 3px;
+  display: block; /* Align icons properly */
+}
+
+/* Individual adjustments */
+#calendarBtn .material-symbols-outlined {
+  font-size: 33px;   /* make calendar icon bigger */
+  margin-left: -20px;
+}
+
+#calendarBtn .label {
+ font-size: 10;
+ margin-left: -20px;
+ margin-bottom: -1px;
+ font-family: "Lexend";
+ font-weight: 280;
+}
+
+#callBtn .material-symbols-outlined {
+  font-size: 33px;   /* make calendar icon bigger */
+  margin-left: -10px;
+}
+
+#callBtn .label {
+  font-size: 10;
+  margin-left: -10px;
+  margin-bottom: -1px;
+  font-family: "Lexend";
+  font-weight: 280;
+}
+
+.bottom-nav .location_on {
+  margin-right: -58px;  /* fine tune inward/outward */
+  font-size: 33px; /* bigger play icon */
+  font-family: "Lexend";
+  font-weight: 280;
+}
+
+.bottom-nav .drafts {
+  margin-right: -25px;  /* push toward right */
+  font-size: 33px; /* bigger play icon */
+  font-family: "Lexend";
+  font-weight: 280;
+}
+
+#playBtn {
+  position: relative; /* keep this if you want absolute inside */
+  width: 60px; /* or suitable width */
+  height: 60px; /* or suitable height */
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#playBtn .material-symbols-outlined {
+  font-size: 33px;   /* bigger icon */
+  /* Remove absolute */
+  position: static;
+  /* Centered by flex */
+}
+
+#playBtn .label {
+  /* Remove absolute */
+  position: static;
+  font-size: 10px;
+  font-family: "Lexend", sans-serif;
+  font-weight: 280;
+  margin-top: 4px; /* space below icon */
+  color: #000; /* optional */
+
+}
+
+.bottom-nav .label {
+  font-size: 10px;
+  margin-top: 2px;
+}
+
+.bottom-nav .center .label {
+  font-size: 10px;
+  margin-top: 2px;
+}
+
+.material-symbols-outlined{
+  font-size: 35px;  
+}
+
+/* Popup styles */
+#calendarpopup {
+  display: none; /* hidden initially */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent; /* dark background overlay */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* make sure it's always on top */
+}
+
+.popup-content1{
+  background-color: rgb(252, 250, 247);
+  padding: 5px;
+  border-radius: 19px;
+  text-align: center;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+  margin-top: 222px;
+  width: 368px;
+  height: 150px;
+}
+
+#heading1 {
+  margin-bottom: 5px;
+  font-family: "Lexend";
+  font-weight: 350;
+  font-size: 23px;
+}
+
+.popup-content1 p {
+  line-height: 0.5px;
+  margin-bottom: 15px;
+  font-family: "Lexend";
+  font-weight: 280;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center; /* center the buttons */
+  gap: 5px; /* space between buttons */  
+}
+
+.button-row button {
+  flex: 1; /* make both buttons same width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* spacing between icon and text */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 15px;
+  flex: 0 1 170px;  /* allows buttons to shrink and grow, with a base width of 150px */
+  height: 38px;
+}
+
+/* Android button */
+#androidBtn {
+  border-radius: 9px;
+  color: #000;
+  border: 1px solid #000;   /* adds a visible border */
+  font-family: "Lexend";
+  font-weight: 280;
+  background-color: rgb(252, 250, 247);
+}
+
+/* iOS button */
+#iosBtn {
+  border-radius: 9px;
+  color: black;
+  border: 1px solid #000;   /* adds a visible border */
+  font-family: "Lexend";
+  font-weight: 280;
+  background-color: rgb(252, 250, 247);
+}  
+
+/* Popup Overlay */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent; /* dark background overlay */  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Popup Box */
+.popup-content2 {
+  background-color: rgb(252, 250, 247);
+  padding: 15px 25px;
+  border-radius: 30px;
+  max-width: 70%;
+  width: 322px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+
+  margin-top: 140px; /* 👈 Add this */
+}
+
+/* Contact Item Layout */
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.contact-text {
+  flex: 1;
+}
+
+.popup-content2 h3 {
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #5d322f;
+  margin-bottom: 10px;
+}
+
+.contact-text p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.2;
+  color: #333;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+.contact-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.contact-icon {
+  font-size: 35px;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.contact-icon:hover {
+  color: #000;
+}
+
+/* Popup styles */
+#locationpopup {
+  display: none; /* hidden initially */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent; /* dark background overlay */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* make sure it's always on top */
+}
+
+.popup-content3{
+  background-color: rgb(252, 250, 247);
+  padding: 5px;
+  border-radius: 19px;
+  text-align: center;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+  margin-top: 222px;
+  width: 368px;
+  height: 150px;
+}
+
+
+
+#heading3 {
+  margin-bottom: 5px;
+  font-family: "Lexend";
+  font-weight: 350;
+  font-size: 23px;
+}
+
+.popup-content3 h4 {
+  line-height: 0.5px;
+  margin-bottom: 15px;
+  font-family: "Lexend";
+  font-weight: 280;
+}
+.popup-content3 p {
+  line-height: 0.5px;
+  margin-bottom: 15px;
+  font-family: "Lexend";
+  font-weight: 280;
+}
+
+.buttoned-row {
+  display: flex;
+  justify-content: center; /* center the buttons */
+  gap: 5px; /* space between buttons */  
+}
+
+.buttoned-row button {
+  flex: 1; /* make both buttons same width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* spacing between icon and text */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 2px;
+  flex: 0 1 170px;  /* allows buttons to shrink and grow, with a base width of 150px */
+  height: 38px;
+}
+
+/* Android button */
+#androidedBtn {
+  border-radius: 9px;
+  color: #000;
+  border: 1px solid #000;   /* adds a visible border */
+  font-family: "Lexend";
+  font-weight: 280;
+  background-color: rgb(252, 250, 247);
+}
+
+/* iOS button */
+#iosedBtn {
+  border-radius: 9px;
+  color: black;
+  border: 1px solid #000;   /* adds a visible border */
+  font-family: "Lexend";
+  font-weight: 280;
+  background-color: rgb(252, 250, 247);
+}  
+/* === General Popup Overlay === */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4); /* Dimmed background */
+  justify-content: center;
+  align-items: center;
+}
+
+/* === First Popup Content (RSVP Buttons) === */
+.popup-content4 {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 25px 20px;
+  width: 90%;
+  max-width: 320px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.popup-content4 h3 {
+  font-size: 20px;
+  color: #5d322f;
+  margin-bottom: 20px;
+}
+
+/* === Button Row Styling === */
+.hadir-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.hadir-row button {
+  flex: 1;
+  padding: 10px 12px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.hadir-row button:hover {
+  background-color: #e0e0e0;
+}
+
+.hadir-row img {
+  margin-right: 6px;
+}
+
+/* === RSVP Form Styling (initially hidden) === */
+#rsvpForm {
+  display: none;
+  margin-top: 5px;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  max-width: 320px;
+  width: 90%;
+  max-height: 350px;
+  font-family: 'Quicksand', sans-serif;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.1);
+}
+
+#rsvpForm div {
+  margin-bottom: 12px;
+}
+
+#rsvpForm label {
+  display: block;
+  margin-bottom: 0px;  /* Closer spacing */
+  font-weight: 500;
+  color: #333;
+  margin-top: 0px;
+}
+
+#rsvpForm div {
+  margin-bottom: 2px;  /* Less space between form fields */
+}
+
+#rsvpForm input,
+#rsvpForm textarea {
+  margin: 0;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 10px;
+  font-family: 'Quicksand', sans-serif;
+  box-sizing: border-box;
+
+  width: 100%;         /* ✅ Stretch full width of form */
+  max-width: 100%;     /* ✅ Ensure they don't overflow */
+}
+
+
+/* === Form Buttons === */
+#rsvpForm button {
+  padding: 10px 18px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Quicksand', sans-serif;
+  margin-right: 10px;
+}
+
+#hantarBtn {
+  background-color: #5d322f;
+  color: #fff;
+}
+
+#hantarBtn:hover {
+  background-color: #40221e;
+}
+
+#batalBtn {
+  background-color: #ccc;
+  color: #333;
+}
+
+#batalBtn:hover {
+  background-color: #bbb;
+}
+
+
+
+.countdown-container h2 {
+  text-align: center;
+  font-size: 15px;
+  font-family: 'Quicksand';
+  font-weight: 500;
+  color: #5d322f;
+  margin-bottom: 20px;
+}
+
+.countdown {
+>>>>>>> 610bb25472239167b601d92f37e2b609c7fddd43
   display: flex;
   justify-content: center;
   gap: 12px;         /* jarak antara kotak */
@@ -376,19 +1171,27 @@ h2#countdowntitle{
   margin-bottom: 40px; /* extra space below countdown */
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 610bb25472239167b601d92f37e2b609c7fddd43
 .time-box {
   background: rgba(255, 255, 255, 0.5);
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   padding: 2px;
+<<<<<<< HEAD
   width: 60px;
+=======
+  width: 70px;
+>>>>>>> 610bb25472239167b601d92f37e2b609c7fddd43
   text-align: center;
   font-family: 'Quicksand', sans-serif;
 }
 
 .time-box p {
+<<<<<<< HEAD
   font-size: 18px;
   font-weight: 400;
   margin: 0;
@@ -400,14 +1203,34 @@ h2#countdowntitle{
   font-weight: 400;
   margin-top: 6px;
   color: #45556b;
+=======
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0;
+  color: #5d322f;
+}
+
+.time-box h3 {
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 6px;
+  color: #5d322f;
+>>>>>>> 610bb25472239167b601d92f37e2b609c7fddd43
 }
 
 .kehadiran-container h2 {
   text-align: center;
+<<<<<<< HEAD
   font-size: 16px;
   font-family: 'League Spartan';
   font-weight: 400;
   color: #45556b;
+=======
+  font-size: 15px;
+  font-family: 'Quicksand';
+  font-weight: 500;
+  color: #5d322f;
+>>>>>>> 610bb25472239167b601d92f37e2b609c7fddd43
   margin-bottom: px;
 }
 
@@ -424,6 +1247,7 @@ h2#countdowntitle{
   padding: 2px;
   width: 100px;
   text-align: center;
+<<<<<<< HEAD
   font-family: 'League Spartan';
 }
 
@@ -1173,3 +1997,42 @@ h2#countdowntitle{
 
 
 
+=======
+  font-family: 'Quicksand', sans-serif;
+}
+
+.kehadiran-box p {
+  font-size: 50px;
+  font-weight: 300;
+  margin: 0;
+  color: #5d322f;
+}
+
+.kehadiran-box h3 {
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 6px;
+  color: #5d322f;
+  margin-bottom: 20px;
+}
+
+.ucapan {
+  max-height: 200px;       /* or whatever height fits nicely */
+  overflow-y: auto;        /* enable vertical scroll */
+  width: 90%;              /* fit inside mobile frame */
+  margin: 0 auto;           /* center */
+  padding: 5px 10px;
+  border-radius: 10px;      /* optional */
+  box-sizing: border-box;
+}
+
+.ucapan h2{
+  font-size: 14px;
+  font-family: "Quicksand";
+  text-align: center ;
+  font-weight: 600;
+}
+#ucapanList div {
+  margin-bottom: 5px;      /* spacing between wishes */
+}
+>>>>>>> 610bb25472239167b601d92f37e2b609c7fddd43
