@@ -16,23 +16,46 @@ body {
   top: 0;
   width: 50%;
   height: 100%;
-  background: rgba(255,255,255,0.4); /* increase alpha for less see-through */
-  backdrop-filter: blur(10px);       /* stronger blur hides details of snow */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.98) 0%,   /* almost white with blue tint */
+    rgba(255, 255, 255, 0.99) 100%  /* very light blue */
+  );
   transform-style: preserve-3d;
-  transition: all 4s;
+  transition: all 4s ease-in-out;
   z-index: 2000;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.15); /* soft depth inside */
 }
 
-.left-curtain { left: 0; transform-origin: left; transform: rotateY(0deg); z-index: 10; }
-.right-curtain { right: 0; transform-origin: right; z-index: 9; }
+/* Left curtain */
+.left-curtain {
+  left: 0;
+  transform-origin: left;
+  transform: rotateY(0deg);
+  z-index: 10;
+  border-right: 3px solid rgb(255, 255, 255); /* subtle bluish edge */
+  box-shadow: 5px 0 20px rgba(0,0,0,0.25);         /* outside shadow */
+}
+
+/* Right curtain */
+.right-curtain {
+  right: 0;
+  transform-origin: right;
+  z-index: 9;
+  border-left: 3px solid rgba(255, 255, 255, 0.911);
+  box-shadow: -5px 0 20px rgba(0,0,0,0.25);
+}
+
+/* Open animation */
 .open .left-curtain { transform: rotateY(-100deg); }
 .open .right-curtain { transform: rotateY(100deg); }
+
 
 /* LOGO */
 .logo {
   width: 200px;
   height: 200px;
-  background-image: url('https://i.postimg.cc/C5vqYdkB/f-1.png');
+  background-image: url('https://i.ibb.co/gFQDLw1T/f-200-x-200-px-1.png');
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -197,6 +220,7 @@ background-position: top center;
 
 
 
+
 .aluan-text {
   margin: 15px;  
   font-size: 16px;       /* slightly larger for readability */
@@ -352,10 +376,10 @@ background-position: top center;
   max-width: 260px;
   
 }
- /*=== MENGHITUNG HARI ===*/
+/*=== MENGHITUNG HARI ===*/
 .menghitung-hari {
   height: 150px;
-  display: absolute;  
+  display: block; /* fixed: absolute is not valid for display */
 }
 
 h2#countdowntitle{
@@ -364,7 +388,6 @@ h2#countdowntitle{
   font-weight: 400;
   text-align: center;
   color: #45556b;
-
 }
 
 #countdown-timer {
@@ -384,7 +407,10 @@ h2#countdowntitle{
   padding: 2px;
   width: 60px;
   text-align: center;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'League Spartan', sans-serif;
+
+  /* 👇 Add pulse animation */
+  animation: pulseBox 2s ease-in-out infinite;
 }
 
 .time-box p {
@@ -392,14 +418,29 @@ h2#countdowntitle{
   font-weight: 400;
   margin: 0;
   color: #45556b;
+    padding-top: 10px;
 }
 
 .time-box h3 {
   font-size: 15px;
   font-weight: 400;
-  margin-top: 6px;
+  margin: 6px 10px;
+
   color: #45556b;
 }
+
+/* Pulse effect */
+@keyframes pulseBox {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  }
+}
+
 
 .kehadiran-container h2 {
   text-align: center;
@@ -1102,6 +1143,29 @@ h2#countdowntitle{
   height: 30px;
 }
 
+/* Dropdown styling to match inputs */
+#rsvpForm select,
+#rsvpFormtidak select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  color: #45556b;
+  font-family: "League Spartan";
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  height: 38px;   /* slightly taller for dropdown arrow */
+  background-color: #fff;
+  appearance: none;      /* remove default browser style */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='5'%3E%3Cpath fill='%2345556b' d='M0 0l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px 5px;
+}
+
 #rsvpForm textarea {
   padding: 6px 10px;
   border-radius: 6px;
@@ -1169,10 +1233,4 @@ h2#countdowntitle{
             #batalBtn:hover {
             background-color: #bbb;
 }
-
-
-
-
-
-
 

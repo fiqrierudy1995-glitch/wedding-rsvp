@@ -197,7 +197,7 @@ popupCal && popupCal.addEventListener("click", e => {
 androidBtn && androidBtn.addEventListener("click", () => {
   const googleUrl = "https://calendar.google.com/calendar/u/0/r/eventedit?" +
     "text=WALIMATULURUS+FIQRIE-FAZLIANA&" +
-    "dates=20251230T030000Z/20251230T080000Z&" +
+    "dates=20251231T030000Z/20251230T080000Z&" +
     "details=Join+us+at+D%27Kayangan+Ballroom+Oceanus+Waterfront+Mall&" +
     "location=D%27Kayangan+Ballroom+Oceanus+Waterfront+Mall";
   window.open(googleUrl, "_blank");
@@ -210,7 +210,7 @@ VERSION:2.0
 PRODID:-//WALIMATULURUS FIQRIE & FAZLIANA//Event Calendar//EN
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
-UID:20251230T030000Z-Wedding@example.com
+UID:20251231T030000Z-Wedding@example.com
 DTSTAMP:20251005T000000Z
 DTSTART:20251230T030000Z
 DTEND:20251230T080000Z
@@ -259,7 +259,6 @@ rsvpBtn && rsvpBtn.addEventListener("click", e => {
 
 hadirBtn && hadirBtn.addEventListener("click", () => {
   rsvpChoice = "Hadir";
-  hadirBersama.style.display = "block";
   rsvpForm.style.display = "block";
   rsvpFormtidak.style.display = "none";
   hadirRow.style.display = "none";
@@ -406,4 +405,29 @@ async function loadUcapan() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", loadUcapan);
+// Run once on page load
+document.addEventListener("DOMContentLoaded", () => {
+  loadUcapan();
+
+  // 🔄 Auto refresh every 10 seconds
+  setInterval(loadUcapan, 3000);
+});
+
+
+
+const jumlahKehadiran = document.getElementById("jumlahKehadiran");
+
+function toggleHadirBersama() {
+  if (jumlahKehadiran.value === "2") {
+    hadirBersama.style.display = "block"; // show if 2 orang
+  } else {
+    hadirBersama.style.display = "none";  // hide otherwise
+  }
+}
+
+// Run once on load
+toggleHadirBersama();
+
+// Run whenever dropdown changes
+jumlahKehadiran.addEventListener("change", toggleHadirBersama);
+

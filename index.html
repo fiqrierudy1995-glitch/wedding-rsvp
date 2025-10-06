@@ -1,6 +1,6 @@
 <html lang="en">
-  <head>
-    <!-- Head Section -->
+   <!-- Head Section -->
+   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"> 
     <title>Fiqrie & Fazliana Wedding Invitation</title>
@@ -16,10 +16,6 @@
     <meta name="twitter:title" content="Fiqrie & Fazliana Wedding Invitation">
     <meta name="twitter:description" content="You are invited to the wedding of Fiqrie & Fazliana — RSVP online.">
     <meta name="twitter:image" content="https://i.ibb.co/kV80dZbj/Blue-White-Vintage-Classic-Elegant-Wedding-Invitation-3.jpg">
-
-   <!-- other CSS, fonts, scripts etc. -->
-   
-
 
     <!-- Google Fonts & Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,100,0,-25" />
@@ -39,9 +35,10 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-  </head>
+   </head>
 
   <body> 
+
       <!-- Main Content -->
       <div class="mobile-frame" id="frame">
          <!-- Scrollable container -->
@@ -60,7 +57,7 @@
                </div>
 
                <!-- Background Image (Now Revealed After Curtains) -->
-               <img src="https://i.ibb.co/kV80dZbj/Blue-White-Vintage-Classic-Elegant-Wedding-Invitation-3.jpg" 
+               <img src="https://i.ibb.co/q33QCrz8/Blue-White-Vintage-Classic-Elegant-Wedding-Invitation-3.png" 
                alt="Page 1">
             </div>
             
@@ -106,7 +103,7 @@
                   <!-- Date Section -->
                   <div class="tarikh">
                      <p class="date-text">TARIKH</p>
-                     <p class="date1-text">Ahad, 30 Disember 2025</p>
+                     <p class="date1-text">Rabu, 31 Disember 2025</p>
                   </div>
 
                   <!-- Time Section -->
@@ -230,7 +227,7 @@
          <!-- Calendar Choice Popup -->
          <div class="popup popupcal" id="popupcal"> <!-- Overlay-->
             <div class="calendarpopup"> <!-- Box -->
-               <h3 id="heading">30 Disember 2025</h3>
+               <h3 id="heading">31 Disember 2025</h3>
                <p>11.00 pagi - 4.00 petang</p>
 
                <!-- Button Row Wrapper -->
@@ -416,12 +413,26 @@
                         </div>
                      </div>
 
-                     <div class="field" id="hadirBersama">
+                     <!-- Jumlah Kehadiran -->
+                     <div class="field">
+                        <label class="label" for="jumlahKehadiran">Jumlah Kehadiran</label>
+                        <div class="control">
+                           <select id="jumlahKehadiran" class="input" name="jumlah_kehadiran">
+                              <option value="">-- Sila Pilih --</option>
+                              <option value="1">1 orang</option>
+                              <option value="2">2 orang</option>
+                           </select>
+                        </div>
+                     </div>
+
+                     <!-- Hadir Bersama (hidden by default) -->
+                     <div class="field" id="hadirBersama" style="display:none !important;">
                         <label class="label" for="bersamaHadir">Hadir Bersama</label>
                         <div class="control">
                            <input id="bersamaHadir" class="input" type="text" placeholder="Nama pasangan" name="hadir_bersama" />
                         </div>
                      </div>
+
 
                      <div class="field">
                         <label class="label" for="ucapanHadir">Ucapan</label>
@@ -474,5 +485,7 @@
       </div><!-- End of mobile frame -->
       <!-- JS file -->
       <script src="script.js"></script>
+
+      
   </body>
 </html>
