@@ -191,72 +191,86 @@ background-position: top center;
   justify-content: flex-start;
   align-items: center;
   padding-top: 20px;
-  height: auto;   /* 🔹 let the content decide the height */
-  min-height: 500px; /* optional: keeps minimum height if you still want spacing */
+  height: auto;          /* content decides height */
+  min-height: 500px;     /* keeps min spacing */
 }
 
- 
 .arabic-text {
   padding-top: 25px;
-  margin: 0 0 2px 0;
+  padding-bottom: 0px;
+  margin: 0 0 13px 0;
   font-family: 'Almarai', sans-serif;
-  font-size: 42px;
-  font-weight: 300;      /* use Light weight */
+  font-size: 36px;
+  font-weight: 300;      
   text-align: center;
   color: #45556b;
-  transform: scaleX(1.3);  /* Make it 1.8 times wider */
-
+  transform: scaleX(1.3);  /* make Arabic wider */
 }
+
 .parents-group {
-  margin: 0 0 2px 0;       /* spacing below */
-  font-size: 20px;         /* clear, readable size */
-  font-weight: 400;        /* medium weight for balance */
   text-align: center;
   color: #45556b;
-  line-height: 0.2;        /* better readability than 0.2 */
   font-family: 'League Spartan';
-  
+  margin-bottom: 10px;  /* spacing below group */
+  margin-top: 10px;
 }
 
+/* 🔹 Parent 1 */
+.parent1-text {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3;
+}
 
+/* 🔹 "&" symbol */
+.parent2-text {
+  margin: 2px 0;
+  font-size: 18px;
+  font-weight: 400;   
+  line-height: 1.2;
+}
+
+/* 🔹 Parent 2 */
+.parent3-text {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3;
+}
 
 
 .aluan-text {
-  margin: 15px;  
-  font-size: 16px;       /* slightly larger for readability */
+  margin: 13px auto;  
+  font-size: 16px;       
   font-style: normal;    
   text-align: center;
   color: #45556b;
-  line-height: 1.2;      /* smoother paragraph spacing */
-  max-width: 310px;      /* keeps text tidy inside mobile frame */
-  margin-left: auto;
-  margin-right: auto;
+  line-height: 1.4;      
+  max-width: 310px;      
   font-family: 'League Spartan';
   font-weight: 300;
 }
 
-
 .couple-text {
-  margin: 0px;    /* spacing below */
-  font-size: 40px;      /* slightly smaller than Arabic text */
+  margin: 0px;    
+  font-size: 40px;      
   font-weight: 450;
   text-align: center;
   color: #45556b;
   line-height: 0.1;
   font-family: 'Luxurious Script', cursive;
-    letter-spacing: 2px;             /* loosen letters */
-
+  letter-spacing: 2px;
 }
-
 
 .date-text,
 .tempat-text,
-.hour-text{
+.hour-text {
   font-size: 16px;
   font-style: normal;
   text-align: center;
   color: #45556b;
-  line-height: 1.4;  /* slightly tighter */
+  line-height: 1.4;
   max-width: 320px;
   margin-left: auto;
   margin-right: auto;
@@ -270,112 +284,163 @@ background-position: top center;
   font-style: normal;
   text-align: center;
   color: #45556b;
-  line-height: 1.0;  /* slightly tighter */
+  line-height: 1.0;
   max-width: 320px;
   margin-left: auto;
   margin-right: auto;
   font-family: 'League Spartan';
 }
 
-.date-text { font-weight: 400; margin-bottom: 0; }
-.date1-text { font-weight: 200; margin-top: 0; margin-bottom: 4px; } /* small gap before next group */
+.date-text { 
+  font-weight: 400; 
+  margin-bottom: 0; 
+}
+.date1-text { 
+  font-weight: 200; 
+  margin-top: 0; 
+  margin-bottom: 4px; 
+}
 
-.tempat-text { font-weight: 400; margin-bottom: 0; }
-.tempat1-text { font-weight: 200; margin-top: 0; margin-bottom: 4px; }
+.tempat-text { 
+  font-weight: 400; 
+  margin-bottom: 0; 
+}
+.tempat1-text { 
+  font-weight: 200; 
+  margin-top: 0; 
+  margin-bottom: 4px; 
+}
 
-.hour-text { font-weight: 400; margin-bottom: 0; }
-.hour1-text { font-weight: 200; margin-top: 0; margin-bottom: 30px; }
+.hour-text { 
+  font-weight: 400; 
+  margin-bottom: 0; 
+}
+.hour1-text { 
+  font-weight: 200; 
+  margin-top: 0; 
+  margin-bottom: 30px; 
+}
+
+/* 🔹 New Doa Section */
+.doa-text {
+  margin: 20px auto;         
+  font-size: 16px;            
+  text-align: justify;        /* main justify */
+  text-align-last: center;    /* last line center */
+  color: #45556b;
+  line-height: 1.6;           
+  max-width: 320px;           
+  font-family: 'League Spartan';
+  font-weight: 300;
+}
 
 
+
+/* 🔹 Kotak Atur Cara Majlis */
 .box-text {
   position: relative;
   border-radius: 25px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10); /* outer shadow */
-  background: rgba(255, 255, 255, 0); /* inner solid color */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+  background: rgba(255, 255, 255, 0);
   width: 280px;
-  height: 280px;
-  margin: 0 auto;
+  margin: 0 auto 30px;   /* ada ruang bawah */
   z-index: 1;
-  padding: 30px 0px 30px;
+  padding: 25px 15px;    /* padding lebih kemas */
 }
 
-.box-text h3{
-  font-size: 16px;      /* normal paragraph size */
+/* 🔹 Tajuk utama */
+.box-text h3 {
+  font-size: 18px;
   text-align: center;
   color: #45556b;
-  line-height: 1.2;     /* better readability */
-  max-width: 320px;     /* keeps text tidy inside mobile frame */
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 0 15px 0;     /* jarak bawah tajuk */
+  font-family: 'League Spartan';
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* 🔹 Subtajuk atau waktu */
+.box-text h4 {
+  margin: 8px 0 2px 0;    /* spacing atas bawah */
+  font-size: 16px;
+  text-align: center;
+  color: #45556b;
   font-family: 'League Spartan';
   font-weight: 400;
 }
 
-.box-text h4,
-.box-text p 
-{
-  margin: 12px;  
-  font-size: 16px;      /* normal paragraph size */
+/* 🔹 Perkara/aktiviti */
+.box-text p {
+  margin: 0 0 12px 0;     /* spacing setiap line */
+  font-size: 15px;
   text-align: center;
   color: #45556b;
-  line-height: 1.2;     /* better readability */
-  width: 270px;     /* keeps text tidy inside mobile frame */
-  margin-left: auto;
-  margin-right: auto;
   font-family: 'League Spartan';
+  font-weight: 300;
+  line-height: 1.4;       /* jarak antara baris */
 }
 
-.box-text h4 { font-weight: 400; margin-bottom: 0; }
-.box-text p { font-weight: 200; margin-top: 0; margin-bottom: 20px; } /* small gap before next group */
-
-
-
-.majlis2-text,.majlis4-text,.majlis6-text,.majlis8-text{
-  margin: 12px;  
-  font-size: 16px;      /* normal paragraph size */
+/* 🔹 Line khusus untuk setiap aktiviti */
+.majlis2-text,
+.majlis4-text,
+.majlis6-text,
+.majlis8-text {
+  margin: 6px 0;          /* spacing sekata */
+  font-size: 15px;
   text-align: center;
   color: #45556b;
-  line-height: 1.2;     /* better readability */
-  max-width: 320px;     /* keeps text tidy inside mobile frame */
-  margin-left: auto;
-  margin-right: auto;
   font-family: 'League Spartan';
   font-weight: 400;
+  line-height: 1.4;
 }
 
+/* === DOA BOX CONTAINER === */
 .doa-box { 
   flex: 0 0 auto;  
   display: flex;
-  flex-direction: column;   /* 🔹 stack vertically */
+  flex-direction: column;   /* stack vertically */
   justify-content: flex-start; 
-  align-items: center;      /* center horizontally */
-  padding-top: 20px;
-  height: 240px;
-  padding-bottom: 50px;
-}
-#doa-arab h3{
-  margin: 10px 0 0;
-  padding: 0;
-    color: #45556b;
-  font-family: 'Almarai', sans-serif;
-    font-weight: 800;     /* regular weight */
-      font-size: 50px;      /* size for Arabic greeting */
-       text-align: center;
-
+  align-items: center;      
+  padding: 20px 0 40px;     /* atas 20px, bawah 40px */
+  height: auto;             /* let content decide height */
+  min-height: 240px;        /* optional */
 }
 
-#doa-melayu p{
-  font-size: 16px;      
-  text-align: center;
+
+/* 🔹 Arabic wrapper */
+#doa-arab {
+  margin-bottom: 10px;      /* jarak ke Melayu doa */
+  text-align: center;       
+}
+
+#doa-arab h3 {
+  margin: 0;
   color: #45556b;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.2;
+  font-family: 'Almarai', sans-serif;
+  font-weight: 800;
+  font-size: 50px;
+}
+
+/* 🔹 Melayu wrapper */
+#doa-melayu {
+  margin-top: 0;            /* kawal jarak atas */
+  margin-bottom: 30px;      /* jarak ke countdown */
+  max-width: 280px;         /* kemas dalam frame */
+}
+
+#doa-melayu p {
+  font-size: 16px;      
+  color: #45556b;
   font-family: 'League Spartan';
   font-weight: 200;
-  max-width: 260px;
-  
+  text-align: justify;
+  text-align-last: center;  /* line last center */
+  line-height: 1.6;  
+  margin: 0;                /* reset default p */
+  padding: 0 10px;          /* ruang kiri kanan */
 }
+
+
 /*=== MENGHITUNG HARI ===*/
 .menghitung-hari {
   height: 150px;

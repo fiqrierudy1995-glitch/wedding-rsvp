@@ -197,7 +197,7 @@ popupCal && popupCal.addEventListener("click", e => {
 androidBtn && androidBtn.addEventListener("click", () => {
   const googleUrl = "https://calendar.google.com/calendar/u/0/r/eventedit?" +
     "text=WALIMATULURUS+FIQRIE-FAZLIANA&" +
-    "dates=20251231T030000Z/20251230T080000Z&" +
+    "dates=20251231T030000Z/20251231T080000Z&" +
     "details=Join+us+at+D%27Kayangan+Ballroom+Oceanus+Waterfront+Mall&" +
     "location=D%27Kayangan+Ballroom+Oceanus+Waterfront+Mall";
   window.open(googleUrl, "_blank");
@@ -212,8 +212,8 @@ CALSCALE:GREGORIAN
 BEGIN:VEVENT
 UID:20251231T030000Z-Wedding@example.com
 DTSTAMP:20251005T000000Z
-DTSTART:20251230T030000Z
-DTEND:20251230T080000Z
+DTSTART:20251231T030000Z
+DTEND:20251231T080000Z
 SUMMARY:WALIMATULURUS FIQRIE & FAZLIANA
 DESCRIPTION:Join us at D'Kayangan Ballroom, Oceanus Waterfront Mall
 LOCATION:D'Kayangan Ballroom, Oceanus Waterfront Mall
@@ -438,11 +438,11 @@ const styleControl = document.getElementById("styleControl");
 const styles = {
   1: {
     bg: "https://i.ibb.co/YTKMhHTh/Floral-Watercolor-Illustration-Wedding-Invitation-430-x-820-px.png",
-    cover: "https://i.ibb.co/b58DQS9j/3.png"
+    cover: "https://i.ibb.co/FG4dJY2/STYLE1-GISTESY.png"
   },
   2: {
-    bg: "https://i.ibb.co/DDf3WsKt/Blue-White-Vintage-Classic-Elegant-Wedding-Invitation-4.jpg",
-    cover: "https://i.ibb.co/q33QCrz8/Blue-White-Vintage-Classic-Elegant-Wedding-Invitation-3.png"
+    bg: "https://i.ibb.co/YTKMhHTh/Floral-Watercolor-Illustration-Wedding-Invitation-430-x-820-px.png",
+    cover: "https://i.ibb.co/RqvFYtY/STYLE1-LUXURIOS.png"
   }
 };
 
