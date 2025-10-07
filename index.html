@@ -45,21 +45,30 @@
          <div class="scroll-container" id="scrollContainer">
 
             <!-- Page 1 -->
-            <div class="content">
-               <!-- Left Curtain with Logo inside -->
-               <div class="curtain left-curtain">
-                  <div class="logo" id="openBtn">
-                  </div>
-               </div>
+            <!-- Page 1 -->
+<div class="content">
+  <!-- Left Curtain with Logo inside -->
+  <div class="curtain left-curtain">
+    <div class="logo" id="openBtn"></div>
+  </div>
 
-               <!-- Right Curtain -->
-               <div class="curtain right-curtain">
-               </div>
+  <!-- Right Curtain -->
+  <div class="curtain right-curtain"></div>
 
-               <!-- Background Image (Now Revealed After Curtains) -->
-               <img src="https://i.ibb.co/q33QCrz8/Blue-White-Vintage-Classic-Elegant-Wedding-Invitation-3.png" 
-               alt="Page 1">
-            </div>
+  <!-- Background Image (Now Revealed After Curtains) -->
+  <img id="coverImage" 
+       src="https://i.ibb.co/b58DQS9j/3.png" 
+       alt="Page 1">
+
+  <!-- Style Switcher (only visible after curtain opens) -->
+  <div id="styleControl" style="position:absolute; bottom:20px; left:50%; transform:translateX(-50%); display:none;">
+    <select id="styleSwitcher">
+      <option value="1">Style 1</option>
+      <option value="2">Style 2</option>
+    </select>
+  </div>
+</div>
+
             
             <!-- Hidden Audio Player -->
             <audio id="weddingMusic" src="music.mp3" loop></audio>

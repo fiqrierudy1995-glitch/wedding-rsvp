@@ -1234,3 +1234,40 @@ h2#countdowntitle{
             background-color: #bbb;
 }
 
+/* Style switcher container */
+#styleControl {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none; /* hidden until curtain opens */
+  z-index: 100;
+}
+
+/* Dropdown */
+#styleSwitcher {
+  padding: 8px 14px;
+  font-size: 14px;
+  font-family: "League Spartan", sans-serif;
+  border: 2px solid #45556b;
+  border-radius: 8px;
+  background: #ffffffdd;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  appearance: none; /* removes default arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%2345556b' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  padding-right: 34px; /* space for arrow */
+}
+
+/* Hover / focus effect */
+#styleSwitcher:hover, #styleSwitcher:focus {
+  border-color: #2d3b4f;
+  background-color: #f4f6f9;
+}

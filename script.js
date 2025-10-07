@@ -431,3 +431,32 @@ toggleHadirBersama();
 // Run whenever dropdown changes
 jumlahKehadiran.addEventListener("change", toggleHadirBersama);
 
+const coverImage = document.getElementById("coverImage");
+const styleSwitcher = document.getElementById("styleSwitcher");
+const styleControl = document.getElementById("styleControl");
+
+const styles = {
+  1: {
+    bg: "https://i.ibb.co/YTKMhHTh/Floral-Watercolor-Illustration-Wedding-Invitation-430-x-820-px.png",
+    cover: "https://i.ibb.co/b58DQS9j/3.png"
+  },
+  2: {
+    bg: "https://i.ibb.co/DDf3WsKt/Blue-White-Vintage-Classic-Elegant-Wedding-Invitation-4.jpg",
+    cover: "https://i.ibb.co/q33QCrz8/Blue-White-Vintage-Classic-Elegant-Wedding-Invitation-3.png"
+  }
+};
+
+// Show dropdown only after curtain opens
+openBtn && openBtn.addEventListener("click", () => {
+  frame.classList.add("open");
+  setTimeout(() => {
+    styleControl.style.display = "block";  // 👈 show switcher
+  }, 1800); // matches curtain open animation
+});
+
+// Change both cover + background
+styleSwitcher.addEventListener("change", e => {
+  const choice = styles[e.target.value];
+  frame.style.backgroundImage = `url('${choice.bg}')`;
+  coverImage.src = choice.cover;
+});
