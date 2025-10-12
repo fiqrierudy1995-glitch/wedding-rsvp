@@ -39,7 +39,7 @@ const googleMapsUrl = "https://www.google.com/maps?q=S23A,+2ND+FLOOR,+D'Kayangan
 const wazeUrl = "https://waze.com/ul?q=S23A,+2ND+FLOOR,+D'Kayangan+Ballroom,+D'KAYANGAN+BALLROOM,+OCEANUS+WATERFRONT+MALL,+PHASE+1,+Jln+Tun+Fuad+Stephens,+88000+Kota+Kinabalu,+Sabah&navigate=yes";
 
 const scriptURL = "https://script.google.com/macros/s/AKfycbzjq-A08RZoV6-IemVpTrV45Cw0kbhvPmJwM_FjP4EH0SeTpvppzU67OCUgbtZAsGNuXw/exec";
-                    
+
 // ==========================
 // === Curtain & Auto-Scroll ===
 frame && addSnowflakes(); // initialize snowflakes
@@ -322,7 +322,7 @@ if (rsvpFormtidak) {
 async function submitRSVP(form, url, rsvpChoice) {
   const messageDiv = document.getElementById("message");
   const hantarBtn = form.querySelector("button[type='submit']");
-  
+
   messageDiv.textContent = "Menghantar...";
   messageDiv.style.display = "block";
   messageDiv.style.backgroundColor = "beige";
@@ -351,12 +351,12 @@ async function submitRSVP(form, url, rsvpChoice) {
       messageDiv.style.color = rsvpChoice === "Hadir" ? "#000" : "#363636";
       form.reset();
 
-       // ✅ Auto-close the popup after 2 seconds
-  setTimeout(() => {
-    popupRSVP.style.display = "none";
-    resetRSVP();
-  }, 2000);
-      
+      // ✅ Auto-close the popup after 2 seconds
+      setTimeout(() => {
+        popupRSVP.style.display = "none";
+        resetRSVP();
+      }, 2000);
+
     } else {
       throw new Error(data.message || "Submission failed");
     }
